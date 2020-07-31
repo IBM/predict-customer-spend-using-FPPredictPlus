@@ -24,7 +24,9 @@ We need to install and set up the `FP Predict Plus operator on Open Shift cluste
 
 # Estimated time
 
-It should take about 30-45 minutes to complete this tutorial. We will explore API based approach under command line using `FP Predict Plus operator` for solving this usecase. For GUI based approach, please refer to the below mentioned tutorial.
+It should take about 30-45 minutes to complete this tutorial. We will explore API based approach under command line using `FP Predict Plus operator` for solving this usecase. 
+
+For GUI based approach, please refer to the below mentioned tutorial.
 
 [FP Predict Plus Operator using GUI](https://github.com/IBM/build-a-classification-model-using-fppredictplus)
 
