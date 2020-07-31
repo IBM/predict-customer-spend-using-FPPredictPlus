@@ -18,7 +18,7 @@ We will be using **`FP Predict Plus operator` from `Red Hat Marketplace`** to so
 
 # Prerequisites
 
-We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below.
+We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below. Keep the instance URL handy for making `API` calls. 
 
 [Install and setup FP Predict Plus operator on Red Hat Marketplace](https://github.com/IBM/getting-started-with-fppredictplus)
 
@@ -32,3 +32,10 @@ For GUI based approach, please refer to the below mentioned tutorial.
 
 # Steps
 
+We need to generate an API key to access the FP Predict Plus operator instance for submitting the jobs. Launch the instance and click on `License Information` tab on the left navigation pane and click on `generate` under `API Key` section. Copy the API key to be used in next steps.
+
+![]()
+
+
+
+We need to 
