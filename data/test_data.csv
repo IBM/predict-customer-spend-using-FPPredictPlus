@@ -1,0 +1,13 @@
+﻿Count,Exp,Location,Skill,Salary
+1,9,Bangalore,Python,1800000
+2,12,Bangalore,Machine_learning,2400000
+3,12,Delhi,Big_data,2000000
+4,5,Delhi,Java,1000000
+5,10,Gurgaon,Python,2000000
+6,6,Gurgaon,Machine_learning,1500000
+7,9,Hyd,Big_data,2000000
+8,6,Hyd,Testing,1400000
+9,6,Mumbai,Big_data,1200000
+10,10,Mumbai,Machine_learning,2400000
+11,6,Pune,Big_data,1300000
+12,5,Pune,Testing,1000000
