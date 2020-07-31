@@ -18,24 +18,36 @@ We will be using **`FP Predict Plus operator` from `Red Hat Marketplace`** to so
 
 # Prerequisites
 
-We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below. Keep the instance URL handy for making `API` calls. 
+We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below. 
 
 [Install and setup FP Predict Plus operator on Red Hat Marketplace](https://github.com/IBM/getting-started-with-fppredictplus)
 
 # Estimated time
 
-It should take about 30-45 minutes to complete this tutorial. We will explore API based approach under command line using `FP Predict Plus operator` for solving this usecase. 
-
-For GUI based approach, please refer to the below mentioned tutorial.
-
-[FP Predict Plus Operator using GUI](https://github.com/IBM/build-a-classification-model-using-fppredictplus)
+It should take about 30-45 minutes to complete this tutorial. 
 
 # Steps
 
-We need to generate an API key to access the FP Predict Plus operator instance for submitting the jobs. Launch the instance and click on `License Information` tab on the left navigation pane and click on `generate` under `API Key` section. Copy the API key to be used in next steps.
+### Add the data
 
-![]()
+Launch the FP Predict Plus platform and sign in using the default credentials. Lets begin by adding `datasets`. Clone this repo and navigate to `data` folder to download the datasets onto your local file system. 
+
+Click on `Dataset Management` which is the third option on the left navigation pane and select `Datasets` on the top. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/add-data.png)
+
+Click on `Browse` and select the three csv files for upload. The datasets gets uploaded to the platform in a minute. The upload time is dependent on the size of the datasets. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/data.png)
+
+**Note :- Only `csv` format is supported and the dataset need to have a column with unique values. In these csv files, we have added a `Count` column to be unique. The datasets needs to be split into training, testing and holdout (validation) datasets before hand.** `Citation is needed to use these datasets for other projects.`
+
+### Generate API Key
+
+We need to generate an API key to access the `FP Predict Plus operator instance` for submitting the jobs. Launch the instance and click on `License Information` tab on the left navigation pane and click on `generate` under `API Key` section. Copy the API key to be used in next steps.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-api-key.png)
+
+### Create a job
 
 
-
-We need to 
