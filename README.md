@@ -42,12 +42,73 @@ Click on `Browse` and select the three csv files for upload. The datasets gets u
 
 **Note :- Only `csv` format is supported and the dataset need to have a column with unique values. In these csv files, we have added a `Count` column to be unique. The datasets needs to be split into training, testing and holdout (validation) datasets before hand.** `Citation is needed to use these datasets for other projects.`
 
-### Generate API Key
-
-We need to generate an API key to access the `FP Predict Plus operator instance` for submitting the jobs. Launch the instance and click on `License Information` tab on the left navigation pane and click on `generate` under `API Key` section. Copy the API key to be used in next steps.
-
-![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-api-key.png)
 
 ### Create a job
+
+We need to create a new `job` in the platform. Click on `Dashboard` which is the first option on the left navigation pane and hit `Start` on the top right hand side.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-strt.png)
+
+We need to click on `No` as our data does not contain Date or Timestamps. The platform will understand to create a `Predict` job with no Date or Timestamps and if the dataset has Date or Timestamps, then platform will create a `Forecast` job.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-sel.png)
+
+Lets go ahead and create a new job by filling in the details per below. We will update the name, select the task as `Model + Predict` as that is what we will be doing. We can select `Model` and it will build a model for us and select `Predict` if we have a model file ready for doing predictions. Set the dataset location to `Cloud` and select the train and test datasets using `Browse` for upload. Select the Target Variable as `Spend` and Unique Identifier as `Row_num`. Under `Advanced settings`, Operation Mode should be set to `Automated`. Hit `Run` to get the job started.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/crt-job.png)
+
+The job will take a couple of minutes to complete. We can observe how many models are getting created and the different scenarios evaluated in the process. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-rng.png)
+
+`Note` :- The regression model will take a little longer to complete when compared with a binary classification model.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/crtd-mdls.png)
+
+The model will try to use different scenarios like all variables/few variables etc for generating predictions. We should see the job status per below.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-complete.png)
+
+### Review the job details
+
+Lets review the job which has been created for us by clicking on `Dashboard` which is the first option on the left navigation pane and select the job with name `build-model`. The `number` preceding before the job name is to identify how many jobs have run so far and can be ignored. We can observe the model distribution where model `M-9` has scored for 23 records in the test data and model `M-3 & M-5` have scored for one record each in the test data. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/view-job.png)
+
+We can observe the complete job details like `Description`, `Modelling` and `Prediction`. The system built 7 models using 479 records from the training data in 290 seconds and generated predictions on 25 records from testing data.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-dtls.png)
+
+### Analyze results
+
+Lets review the model performance in detail. Click on `Predicted vs Actual` option to see the model performance. We can observe that predicted values are very close to actual values. The model was able to learn from the data and generated predictions with good accuracy.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-act.png)
+
+Click on `Models` to understand how many predictions are done by each model. We can observe that model `M-9` has scored for 23 records from the testing data.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/mdls.png)
+
+Click on `Variables` to understand the significance of each variable in predicting the outcome. We can observe that all variables except `LoanAmount` were used by most of the models.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/variables.png)
+
+Click on `Variables of Models` to understand different scenarios explored by different models. We can observe that models `M-3` and `M-9` used all variables where as `M-5` used ten variables for building different models. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/scenarios.png)
+
+### Download the Results & Model file
+
+We can download the results which has all the model details mentioned above for further analysis. Lets go ahead and click on `Download Results` and `Download Model File` under `Download Files` option and save them in your local system. The `Results` file is named as `build-model-report` and the `model file` is named as `build-model-file.models`. 
+
+In the `Results` file under the tab `Prediction Result`, we can see the model performance where the Mean Absolute Percentage Error (MAPE) is 5.59% which means the model accuracy is ~ 94%. These results are great given that we have used relatively smaller datasets. We can also review other details of the model in the file. 
+
+The `Results` and `Model File` for this experiment are also available in this repo under `reports` and `model` folders. The `Model file` can be uploaded onto cloud using the `Dataset Management` option as described earlier.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/dnld-r-m.png)
+
+### Prediction using new data
+
+In this section, we will learn how to do predictions using the model on new dataset. We will be using the `saved model` from previous step to predict new records from the `holdout data`. The hold out data file will not have the target variable `Fraud_Risk` as we want to predict the outcome given the transactions data. 
 
 
