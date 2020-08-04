@@ -40,7 +40,7 @@ Click on `Browse` and select the three csv files for upload. The datasets gets u
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/data.png)
 
-**Note :- Only `csv` format is supported and the dataset need to have a column with unique values. In these csv files, we have added a `Count` column to be unique. The datasets needs to be split into training, testing and holdout (validation) datasets before hand.** `Citation is needed to use these datasets for other projects.`
+**Note :- Only `csv` format is supported and the dataset need to have a column with unique values. In these csv files, we have added a `Row_num` column to be unique. The datasets needs to be split into training, testing and holdout (validation) datasets before hand.** `Citation is needed to use these datasets for other projects.`
 
 
 ### Create a job
