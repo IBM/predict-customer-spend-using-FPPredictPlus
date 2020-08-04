@@ -113,7 +113,7 @@ In this section, we will learn how to do predictions using the model on new data
 
 ### Create predict job
 
-Lets create a new job for prediction by clicking on `Dashboard` option in the left navigation pane and hit `Start`. Update the `job name`, `description`, select `Predict` under `Tasks` as we have already built the model in previous steps. Upload the `model file` and `holdout data` from cloud or local whichever is convenient for you and select `Unique Identifier` as `Count`.
+Lets create a new job for prediction by clicking on `Dashboard` option in the left navigation pane and hit `Start`. Update the `job name`, `description`, select `Predict` under `Tasks` as we have already built the model in previous steps. Upload the `model file` and `holdout data` from `cloud or local` whichever is convenient for you and select `Unique Identifier` as `Row_num`.
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-pred.png)
 
