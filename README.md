@@ -102,7 +102,7 @@ Click on `Variables of Models` to understand different scenarios explored by dif
 
 We can download the results which has all the model details mentioned above for further analysis. Lets go ahead and click on `Download Results` and `Download Model File` under `Download Files` option and save them in your local system. The `Results` file is named as `build-model-report` and the `model file` is named as `build-model-file.models`. 
 
-In the `Results` file under the tab `Prediction Result`, we can see the model performance where the Mean Absolute Percentage Error (MAPE) is 5.59% which means the model accuracy is ~ 94%. These results are great given that we have used relatively smaller datasets. We can also review other details of the model in the file. 
+In the `Results` file under the tab `Prediction Result`, we can see the model performance where the Mean Absolute Percentage Error (MAPE) is 5.59% which means the model accuracy is ~ 94%. These results are great given that we have used relatively smaller datasets. We can also review other details of the model in the excel file. 
 
 The `Results` and `Model File` for this experiment are also available in this repo under `reports` and `model` folders. The `Model file` can be uploaded onto cloud using the `Dataset Management` option as described earlier.
 
