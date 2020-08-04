@@ -61,7 +61,7 @@ The job will take a couple of minutes to complete. We can observe how many model
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-rng.png)
 
-`Note` :- The regression model will take a little longer to complete when compared with a binary classification model.
+**`Note`** :- The regression model will take a little longer to complete when compared with a binary classification model.
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/crtd-mdls.png)
 
