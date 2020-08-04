@@ -81,7 +81,8 @@ We can observe the complete job details like `Description`, `Modelling` and `Pre
 
 ### Analyze results
 
-Lets review the model performance in detail. Click on `Predicted vs Actual` option to see the model performance. We can observe that predicted values are very close to actual values. The model was able to learn from the data and generated predictions with good accuracy.
+Lets review the model performance in detail. Click on `Predicted vs Actual` option to see the model performance. We can observe that predicted values are very close to actual values. The model was able to learn from the data and generated predictions with good accuracy. 
+`Note` :- It was observed that the model is sensitive towards outliers in the dataset. We can deal with outliers in different ways by identifying the root cause and exclude them if necessary. We can also retain outliers in the dataset for further analysis and treat them accordingly. 
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-act.png)
 
@@ -147,7 +148,7 @@ We can get all the details about model performance by clicking on `Download Resu
 
 # Summary
 
-With this, we have come to an end of this tutorial. We have learnt how to use FP Predict Plus platform for building AI models using `Regression` technique and also explored how to generate predictions on the new dataset. This platform will be beneficial for developers, data scientists to build AI solutions quickly under different domains.
+With this, we have come to an end of this tutorial. We have learnt how to use FP Predict Plus platform for building AI models using `Regression` technique and also explored how to generate predictions on the new dataset. This platform will be extremly beneficial for developers, data scientists to build AI solutions quickly under different domains.
 
 # Related Links
 
