@@ -109,6 +109,52 @@ The `Results` and `Model File` for this experiment are also available in this re
 
 ### Prediction using new data
 
-In this section, we will learn how to do predictions using the model on new dataset. We will be using the `saved model` from previous step to predict new records from the `holdout data`. The hold out data file will not have the target variable `Fraud_Risk` as we want to predict the outcome given the transactions data. 
+In this section, we will learn how to do predictions using the model on new dataset. We will be using the `saved model` from previous step to generate predictions using new records from the `holdout data`. The hold out data file will need to have target variable column `Spend` (without any values) failing which the system prompts an error stating `headers do not match between the training data and the holdout data`. 
 
+### Create predict job
 
+Lets create a new job for prediction by clicking on `Dashboard` option in the left navigation pane and hit `Start`. Update the `job name`, `description`, select `Predict` under `Tasks` as we have already built the model in previous steps. Upload the `model file` and `holdout data` from cloud or local whichever is convenient for you and select `Unique Identifier` as `Count`.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-pred.png)
+
+The predict job will start per below. We should get a message stating `Job Completed Successfully` in a minute or two.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/scoring-job.png)
+
+### Check job summary
+
+Lets look at job summary by clicking `Dashboard` and selecting `generate-predictions` job. We can observe that, models `M-3 & M-9` have scored for two records each in the holdout data.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-job.png)
+
+### Analyze results of predict job
+
+We can get more details in the next step where we can observe that 18 models were built in 10 seconds and prediction was made on five records from the holdout dataset. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-pred-dtls.png)
+
+`Note` :- `Predicted vs Actual` option is not clickable because there's no actual value to be compared. We have generated predicted values given a set of input parameters. We can review `Models, Variables & Variables of Models` as part of model evaluation.
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-job-varbles.png)
+
+### Download predicted results
+
+We can get all the details about model performance by clicking on `Download Results` under `Download Files` option per below. 
+
+![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-res.png)
+
+**In the file under `Predicted Result` tab, we can observe four values under `Predicted Value` which are the generated predictions for the holdout data. The `Results` file by name `generated-predictions-report` is also available under `reports` folder for reference.**
+
+# Summary
+
+With this, we have come to an end of this tutorial. We have learnt how to use FP Predict Plus platform for building AI models using `Regression` technique and also explored how to generate predictions on the new dataset. This platform will be beneficial for developers, data scientists to build AI solutions quickly under different domains.
+
+# Related Links
+
+[Click here to know more about FP Predict Plus](https://marketplace.redhat.com/en-us/products/fp-predict)
+
+[Click here to know more about Red Hat Marketplace](https://marketplace.redhat.com/en-us)
+
+# Citation for data :
+
+The dataset which is referenced in this tutorial is prepared by R.K.Sharath Kumar, Data Scientist, IBM India Software Labs.
