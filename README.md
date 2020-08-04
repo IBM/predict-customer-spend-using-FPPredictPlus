@@ -117,7 +117,7 @@ Lets create a new job for prediction by clicking on `Dashboard` option in the le
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-pred.png)
 
-The predict job will start per below. We should get a message stating `Job Completed Successfully` in a minute or two.
+The predict job will start per below. We should get a message stating `Job Completed Successfully` in couple of minutes.
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/scoring-job.png)
 
@@ -129,7 +129,7 @@ Lets look at job summary by clicking `Dashboard` and selecting `generate-predict
 
 ### Analyze results of predict job
 
-We can get more details in the next step where we can observe that 18 models were built in 10 seconds and prediction was made on five records from the holdout dataset. 
+We can get more details in the next step where we can observe that prediction was made on all four records from the holdout dataset and the trained model file has used 479 records for building seven models. 
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/gen-pred-dtls.png)
 
