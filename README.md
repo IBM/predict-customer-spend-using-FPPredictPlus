@@ -196,7 +196,7 @@ We can get all the details about model performance by clicking on `Download Resu
 
 # Summary
 
-With this, we have come to an end of this tutorial. We have learnt how to use FP Predict Plus platform for building AI models using `Regression` technique and also explored how to generate predictions on the new dataset. This platform will be extremly beneficial for developers, data scientists to build AI solutions quickly under different domains.
+With this, we have come to an end of this code pattern. We have learnt how to use FP Predict Plus platform for building AI models using `Regression` technique and also explored how to generate predictions on the new dataset. This platform will be extremly beneficial for developers, data scientists to build AI solutions quickly under different domains.
 
 
 # Citation for data :
