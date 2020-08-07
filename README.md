@@ -60,6 +60,8 @@ We need to install and set up the `FP Predict Plus operator on Open Shift cluste
 
 * [Analytics](https://developer.ibm.com/code/technologies/analytics/): Analytics delivers the value of data for the enterprise.
 
+* [Machine Learning](https://www.ibm.com/in-en/analytics/machine-learning): Machine learning is a form of AI that enables a system to learn from data rather than through explicit programming. 
+
 
 # Steps
 
