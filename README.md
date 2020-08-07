@@ -1,6 +1,6 @@
 # Introduction 
 
-**This tutorial is part of a series on Red Hat Marketplace operator FP Predict Plus. Please refer to the `Prerequisites` section for `Getting Started`.**
+**This Code Pattern is part of a series on Red Hat Marketplace operator FP Predict Plus. Please refer to the `Prerequisites` section for `Getting Started`.**
 
 ### How to build a Machine Learning Regression model using FP Predict Plus
 
@@ -13,22 +13,70 @@ Examples of regression problems include:
 * Given historical data, predict the temperature
 * Given historical data, predict the sales
 * Given historical data, predict the house price
+* Given historical data, predict customer spend (this code pattern)
 
-We will be using **`FP Predict Plus operator` from `Red Hat Marketplace`** to solve this usecase. Please refer to the content under `Related Links` section to know more about `FP Predict Plus operator` and `Red Hat Marketplace`.
+**We will focus on predicting customer spend using historical data and demonstrate the automated process of building models using `FP Predict plus operator` from Red Hat Marketplace.**
+
+When the reader has completed this code pattern, they will understand how to :
+
+* Quickly set up the instance on OpenShift cluster for model building.
+* Ingest the data and initiate the FP Predict Plus process.
+* Build different models using FP Predict Plus and evaluate the performance.
+* Choose the best model and complete the deployment.
+* Generate new predictions using the deployed model.
+
+# Architecture Diagram
+
+![](https://github.com/IBM/predict-customer-spend-using-FPPredictPlus/blob/master/images/architecture.png)
+
+1. User logs into FP Predict Plus platform using an instance of FP Predict plus operator.
+2. User uploads the data file in the CSV format to the Kubernetes storage on the platform.
+3. User initiates the model building process using FP Predict Plus operator on OpenShift cluster and create pipelines.
+4. User evaluates different pipelines from FP Predict Plus and selects the best model for deployment.
+5. User generates accurate predictions by using the deployed model.
+
+We will be using **`FP Predict Plus operator` from `Red Hat Marketplace`** to solve this usecase. Please refer to the content under **`Included components`** section to know more about `FP Predict Plus operator` and `Red Hat Marketplace`.
 
 # Prerequisites
 
-We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below. 
+We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below.
 
 [Install and setup FP Predict Plus operator on Red Hat Marketplace](https://github.com/IBM/getting-started-with-fppredictplus)
 
-# Estimated time
+## Included components
 
-It should take about 30-45 minutes to complete this tutorial. 
+* [Red Hat Marketplace](https://marketplace.redhat.com/en-us): A simpler way to buy and manage enterprise software, with automated deployment to any cloud.
+
+* [FP Predict Plus](https://marketplace.redhat.com/en-us/products/fp-predict): An Automated, self learning, and Multi Modeling AI that handles Discrete Target variable, Continuous Target variable and Time series data with no need for coding.
+
+* [Red Hat OpenShift Container Platform](https://www.openshift.com/): Empower developers to innovate and ship faster with the leading hybrid cloud, enterprise container platform.
+
+
+## Featured technologies
+
+* [Artificial Intelligence](https://developer.ibm.com/technologies/artificial-intelligence/): Any system which can mimic cognitive functions that humans associate with the human mind, such as learning and problem solving.
+
+* [Data Science](https://developer.ibm.com/code/technologies/data-science/): Systems and scientific methods to analyze structured and unstructured data in order to extract knowledge and insights.
+
+* [Analytics](https://developer.ibm.com/code/technologies/analytics/): Analytics delivers the value of data for the enterprise.
+
 
 # Steps
 
-### Add the data
+Follow these steps to setup and run this code pattern using `FP Predict Plus`.
+
+1. [Add the data](#1-add-the-data)
+1. [Create a job](#2-create-a-job)
+1. [Review the job details](#3-review-the-job-details)
+1. [Analyze results](#4-analyze-results)
+1. [Download the Results & Model file](#5-download-the-results-&-model-file)
+1. [Prediction using new data](#6-prediction-using-new-data)
+1. [Create predict job](#7-create-predict-job)
+1. [Check job summary](#8-check-job-summary)
+1. [Analyze results of predict job](#9-analyze-results-of-predict-job)
+1. [Download predicted results](#10-download-predicted-results)
+
+## 1. Add the data
 
 Launch the FP Predict Plus platform and sign in using the default credentials. Lets begin by adding `datasets`. Clone this repo and navigate to `data` folder to download the datasets onto your local file system. 
 
@@ -43,7 +91,7 @@ Click on `Browse` and select the three csv files for upload. The datasets gets u
 **Note :- Only `csv` format is supported and the dataset need to have a column with unique values. In these csv files, we have added a `Row_num` column to be unique. The datasets needs to be split into training, testing and holdout (validation) datasets before hand.** `Citation is needed to use these datasets for other projects.`
 
 
-### Create a job
+## 2. Create a job
 
 We need to create a new `job` in the platform. Click on `Dashboard` which is the first option on the left navigation pane and hit `Start` on the top right hand side.
 
@@ -69,7 +117,7 @@ The model will try to use different scenarios like all variables/few variables e
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-complete.png)
 
-### Review the job details
+## 3. Review the job details
 
 Lets review the job which has been created for us by clicking on `Dashboard` which is the first option on the left navigation pane and select the job with name `build-model`. The `number` preceding before the job name is to identify how many jobs have run so far and can be ignored. We can observe the model distribution where model `M-9` has scored for 23 records in the test data and model `M-3 & M-5` have scored for one record each in the test data. 
 
@@ -79,7 +127,7 @@ We can observe the complete job details like `Description`, `Modelling` and `Pre
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/job-dtls.png)
 
-### Analyze results
+## 4. Analyze results
 
 Lets review the model performance in detail. Click on `Predicted vs Actual` option to see the model performance. We can observe that predicted values are very close to actual values. The model was able to learn from the data and generated predictions with good accuracy. 
 `Note` :- It was observed that the model is sensitive towards outliers in the dataset. We can deal with outliers in different ways by identifying the root cause and exclude them if necessary. We can also retain outliers in the dataset for further analysis and treat them accordingly. 
@@ -98,7 +146,7 @@ Click on `Variables of Models` to understand different scenarios explored by dif
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/scenarios.png)
 
-### Download the Results & Model file
+## 5. Download the Results & Model file
 
 We can download the results which has all the model details mentioned above for further analysis. Lets go ahead and click on `Download Results` and `Download Model File` under `Download Files` option and save them in your local system. The `Results` file is named as `build-model-report` and the `model file` is named as `build-model-file.models`. 
 
@@ -108,11 +156,11 @@ The `Results` and `Model File` for this experiment are also available in this re
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/dnld-r-m.png)
 
-### Prediction using new data
+## 6. Prediction using new data
 
 In this section, we will learn how to do predictions using the model on new dataset. We will be using the `saved model` from previous step to generate predictions using new records from the `holdout data`. The hold out data file will need to have target variable column `Spend` (without any values) failing which the system prompts an error stating `headers do not match between the training data and the holdout data`. 
 
-### Create predict job
+## 7. Create predict job
 
 Lets create a new job for prediction by clicking on `Dashboard` option in the left navigation pane and hit `Start`. Update the `job name`, `description`, select `Predict` under `Tasks` as we have already built the model in previous steps. Upload the `model file` and `holdout data` from `cloud or local` whichever is convenient for you and select `Unique Identifier` as `Row_num`.
 
@@ -122,13 +170,13 @@ The predict job will start per below. We should get a message stating `Job Compl
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/scoring-job.png)
 
-### Check job summary
+## 8. Check job summary
 
 Lets look at job summary by clicking `Dashboard` and selecting `generate-predictions` job. We can observe that, models `M-3 & M-9` have scored for two records each in the holdout data.
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-job.png)
 
-### Analyze results of predict job
+## 9. Analyze results of predict job
 
 We can get more details in the next step where we can observe that prediction was made on all four records from the holdout dataset and the trained model file has used 479 records for building seven models. 
 
@@ -138,7 +186,7 @@ We can get more details in the next step where we can observe that prediction wa
 
 ![](https://github.com/IBM/build-a-regression-model-using-fppredictplus/blob/master/images/prd-job-varbles.png)
 
-### Download predicted results
+## 10. Download predicted results
 
 We can get all the details about model performance by clicking on `Download Results` under `Download Files` option per below. 
 
@@ -150,11 +198,6 @@ We can get all the details about model performance by clicking on `Download Resu
 
 With this, we have come to an end of this tutorial. We have learnt how to use FP Predict Plus platform for building AI models using `Regression` technique and also explored how to generate predictions on the new dataset. This platform will be extremly beneficial for developers, data scientists to build AI solutions quickly under different domains.
 
-# Related Links
-
-[Click here to know more about FP Predict Plus](https://marketplace.redhat.com/en-us/products/fp-predict)
-
-[Click here to know more about Red Hat Marketplace](https://marketplace.redhat.com/en-us)
 
 # Citation for data :
 
