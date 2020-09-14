@@ -27,7 +27,7 @@ When the reader has completed this code pattern, they will understand how to :
 
 # Architecture Diagram
 
-![](https://github.com/IBM/predict-customer-spend-using-FPPredictPlus/blob/master/images/architecture.png)
+![](https://github.com/IBM/predict-customer-spend-using-FPPredictPlus/blob/master/images/architecture_r.png)
 
 1. User logs into FP Predict Plus platform using an instance of FP Predict plus operator.
 2. User uploads the data file in the CSV format to the Kubernetes storage on the platform.
