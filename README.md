@@ -41,7 +41,7 @@ We will be using **`FP Predict Plus operator` from `Red Hat Marketplace`** to so
 
 We need to install and set up the `FP Predict Plus operator on Open Shift cluster` as per the instructions given below.
 
-[Install and setup FP Predict Plus operator on Red Hat Marketplace](https://github.com/IBM/getting-started-with-fppredictplus)
+[Install and setup FP Predict Plus operator on Red Hat Marketplace](https://developer.ibm.com/tutorials/get-started-findability-platform-predict-plus-red-hat-marketplace/)
 
 ## Included components
 
